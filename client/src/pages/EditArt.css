@@ -1,0 +1,53 @@
+.EditArtPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 100vh;
+    background: var(--base);
+}
+
+.ArtworkItem{
+    font-size: x-large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    gap: 10px;
+    background-color: var(--surface0);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 1px black;
+    height:fit-content;
+}
+
+.ArtworkList{
+    overflow-y: auto;
+    overflow-x: auto;
+    max-height: 70vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100%;
+    gap: 10px;
+}
+
+.imageArt{
+    max-height: 40vh;
+    max-width: 40vh;
+}
+
+.EditArtHeader{
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    background-color: var(--mantle);
+    padding: 20px;
+    box-shadow: 4px 4px 1px var(--crust);
+    border-radius: 30px;
+    width: 70vw;
+}

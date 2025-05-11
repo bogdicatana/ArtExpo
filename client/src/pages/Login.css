@@ -1,0 +1,31 @@
+.AppLogo {
+    width: 30vmin;
+    height: 30vmin;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.LogIn{
+    background-color: var(--mantle);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 100px 30px 100px;
+    box-shadow: 4px 4px 1px var(--crust);
+    border-radius: 30px;
+}
+
+.LogInPage{
+    background: var(--base);
+    height: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    font-size: x-large;
+}

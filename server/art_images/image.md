@@ -1,0 +1,1 @@
+This is the folder where the artworks will be stored as files on the server side.

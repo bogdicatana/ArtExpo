@@ -1,0 +1,40 @@
+.AppLogoHub{
+    width: 25vh;
+    height: 25vh;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.HubPage{
+    background-color: #11171e;
+    background: var(--base);
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    font-size: x-large;
+}
+
+.buttonRow{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+}
+
+.hubButton{
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50vw;
+    transition: width 1s;
+    font-size: xx-large;
+    color: cyan;
+    text-shadow: 2px 2px black;
+}
+
+.hubButton:hover{
+    transition: width 1s;
+    width: 65vw;
+}

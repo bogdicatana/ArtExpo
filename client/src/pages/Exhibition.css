@@ -1,0 +1,21 @@
+.ExhibitionPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 100vh;
+    background: var(--base);
+}
+
+.ExhibitionContent{
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    background-color: var(--mantle);
+    padding: 20px;
+    box-shadow: 4px 4px 1px var(--crust);
+    border-radius: 30px;
+    width: 70vw;
+}

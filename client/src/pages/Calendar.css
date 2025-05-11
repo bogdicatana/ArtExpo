@@ -1,0 +1,236 @@
+  .AppLogoCalendar {
+    width: auto;
+    height: 35px; 
+    max-width: 160px; 
+    object-fit: contain; 
+    margin-top: 8px;
+    cursor: pointer; 
+  }
+
+  .wrapper {
+    width: 99%;
+    height: 100vh;
+    border: 1px solid;
+    box-sizing: border-box;
+  }
+  
+
+  .calendar-head {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; 
+    background-color: var(--mantle);
+    padding: 0 1rem;
+    font-size: 24px;
+    box-sizing: border-box;
+  }
+
+  .calendar-center {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+
+  .calendar-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .calendar-right {
+    flex: 1;
+  }
+  
+  .month-title {
+    font-size: 1.75rem;
+    color: var(--text);
+    font-weight: bold;
+  }
+  
+  .arrow-button {
+    background-color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.25rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .arrow-button:hover {
+    transform: scale(1.1);
+  }
+
+
+  .seven-col-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    height: 27px;
+    box-sizing: border-box;
+  }
+  
+
+  .head-day {
+    text-align: center;
+    background: darkkhaki;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    color: #333;
+    font-weight: bold;
+  }
+  
+
+  .calendar-body {
+    height: calc(100% - 40px - 27px);
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: 1fr;
+    box-sizing: border-box;
+  }
+  
+
+  .four-col {
+    grid-template-rows: repeat(4, 1fr);
+  }
+  .five-col {
+    grid-template-rows: repeat(5, 1fr);
+  }
+  
+
+  .styled-day {
+    border: 1px solid;
+    text-align: right;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+
+  .styled-day.active {
+    background: pink;
+  }
+  
+
+
+  
+.calendar-event-tile {
+    background-color: #333;        
+    color: white;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0.3rem 0;             
+    border: 1px solid #444;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    font-size: 0.85rem;
+  }
+  
+
+  .calendar-event-tile .event-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; 
+  }
+  
+
+  .calendar-event-tile .event-info {
+    padding: 0.5rem;
+  }
+  
+
+  .calendar-event-tile .event-title {
+    margin: 0.5rem 0 0.2rem 0;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .calendar-event-tile .event-time {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+
+  .calendar-event-tile .more-button {
+    margin-top: 0.5rem;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+  }
+  
+  .calendar-event-tile .more-button:hover {
+    background-color: #777;
+  }
+
+  .calendar-arrow:hover {
+    background-color: var(--overlay2);
+    transform: scale(1.05);
+  }
+
+  .calendar-arrow {
+    background-color: var(--overlay0);
+    border: none;
+    border-radius: 999px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    color: white;
+    font-size: 1.2rem;
+  }
+
+  .booked-date {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px ;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+
+  .booked-day:hover {
+    background-color: #fff;
+    border: 2px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .day-header {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color:#ddd
+  }
+  
+  .day-header p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ddd;
+  }
+
+  .ticket-icon{
+    font-size: 1rem;
+  }
+
+  
+  

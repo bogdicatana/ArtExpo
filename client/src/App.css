@@ -1,0 +1,165 @@
+/* 
+color pallete: #000000, #0B192C, #273040 #1E3E62, #FF6500, cyan
+ */
+
+:root {
+    --crust: #11111b;
+    --overlay0: #6c7086;
+    --overlay2: #9399b237;
+    --red: #d20f39;
+    --maroon: #e64553;
+    --base: #1e1e2e;
+    --text: #cdd6f4;
+    --text1: #11111b;
+    --mantle: #181825;
+    --yellow: #f9e2af;
+    --green: #a6e3a1;
+    --peach: #fab387;
+    --surface0: #313244;
+    --shadow: black;
+    --blue: #89b4fa;
+    --lavender: #b4befe;
+    --pink: #f5c2e7;
+    --mauve: #cba6f7;
+    --teal: #94e2d5;
+    --sky: #89b4fa;
+}
+
+html{
+    background: var(--base);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: var(--text);
+}
+
+label{
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    gap: 3px;
+    user-select: none;
+}
+
+.textBox{
+    color: var(--text);
+    background-color: var(--overlay2);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: x-large;
+    box-shadow: 5px 5px var(--shadow);
+}
+
+.textBox:focus {
+    outline: none;
+}
+
+.genericButton{
+    background-color: var(--overlay0);
+    color: var(--text);
+    border: 2px solid var(--crust);
+    border-radius: 10px;
+    padding: 10px 20px; 
+    cursor: pointer;
+    font-size: x-large;
+    box-shadow: 5px 5px var(--shadow);
+}
+
+.genericButton:hover{
+    background-color: var(--overlay2);
+}
+
+.genericButton:active{
+    box-shadow: 2px 2px var(--crust);
+    transform: translate(2px, 2px);
+}
+
+.cancelButton{
+    align-self: left;
+    background-color: var(--red);
+    color: var(--text);
+    border: 2px solid var(--crust);
+    border-radius: 10px;
+    padding: 10px 20px; 
+    cursor: pointer;
+    font-size: x-large;
+    box-shadow: 5px 5px var(--shadow);
+}
+
+.cancelButton:hover{
+    background-color: var(--maroon);
+}
+
+.cancelButton:active{
+    box-shadow: 2px 2px var(--crust);
+    transform: translate(2px, 2px);
+}
+
+.richText{
+    min-height: 150px;
+    max-width: 300px;
+    min-width: 300px;
+    padding: 8px;
+    font-size: x-large;
+    border-radius: 10px;
+    border: 2px solid black;
+    background: var(--overlay2);
+    margin-top: 10px;
+    box-shadow: 5px 5px var(--shadow);
+}
+
+.richText:focus{
+    outline: none;
+}
+
+.richTextdiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.fileUpload{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--overlay0);
+    color: var(--text);
+    border: 2px solid var(--crust);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: x-large;
+    box-shadow: 5px 5px var(--crust);
+    padding: 10px;
+}
+
+.fileUpload:hover{
+    background-color: var(--overlay2);
+}
+
+.fileUpload:active{
+    box-shadow: 2px 2px var(--crust);
+    transform: translate(2px, 2px);
+}
+
+.ExhibitionList{
+    overflow-y: auto;
+    max-height: 50vh;
+    width: 100%;
+}
+
+.ExhibitionItem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px;
+    gap: 30px;
+    background-color: var(--crust);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 1px var(--shadow);
+}
+
