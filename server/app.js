@@ -16,7 +16,7 @@ const { unlink } = require('fs')
 app.use(express.json())
 app.use(fileUpload())
 
-app.post('/signup', (req, res) => {
+app.post('/api/signup', (req, res) => {
 
     const checkEmailSql = "SELECT COUNT(*) AS count FROM accounts WHERE email = ?"
     accountDB.get(checkEmailSql, [req.body.email], (err, row) => {
@@ -55,7 +55,7 @@ app.post('/signup', (req, res) => {
     })
 })
 
-app.post('/login', (req, res) => {
+app.post('/api/login', (req, res) => {
     const checkAccountSql = "SELECT COUNT(*) AS count, id AS ID FROM accounts WHERE username = ? AND password = ?"
     accountDB.get(checkAccountSql, [req.body.username, req.body.password], (err, row) => {
         if (err) {
@@ -71,7 +71,7 @@ app.post('/login', (req, res) => {
     })
 })
 
-app.post('/artworkFormUpload', (req, res) => {
+app.post('/api/artworkFormUpload', (req, res) => {
     const { image } = req.files
     try{
         image.mv(path.join(artImages, image.name))
@@ -100,7 +100,7 @@ app.post('/artworkFormUpload', (req, res) => {
     }
 })
 
-app.post('/exhibitionCreation', (req, res) => {
+app.post('/api/exhibitionCreation', (req, res) => {
     const exhibitionData = {
         name: req.body.exhibitionName,
         location: req.body.exhibitionLocation,
@@ -135,7 +135,7 @@ app.post('/exhibitionCreation', (req, res) => {
     })
 })
 
-app.post('/getExhibitions', (req, res) => {
+app.post('/api/getExhibitions', (req, res) => {
     const getExhibitionsSql = "SELECT * FROM Exhibitions WHERE organizerID = ?"
     exhibitionDB.all(getExhibitionsSql, [req.body.organizerID], (err, rows) => {
         if (err) {
@@ -147,7 +147,7 @@ app.post('/getExhibitions', (req, res) => {
     })
 })
 
-app.post('/deleteArtwork', (req, res) => {
+app.post('/api/deleteArtwork', (req, res) => {
     const { artworkID } = req.body;
 
     const searchDeleteFiles = "SELECT imageFilePath FROM Artworks WHERE imageID = ?";
@@ -183,7 +183,7 @@ app.post('/deleteArtwork', (req, res) => {
     });
 })
 
-app.post('/deleteExhibition', (req, res) => {
+app.post('/api/deleteExhibition', (req, res) => {
     const { exhibitionID } = req.body;
 
     const deleteSql = "DELETE FROM Exhibitions WHERE id = ?";
@@ -234,9 +234,9 @@ app.post('/deleteExhibition', (req, res) => {
     });
 });
 
-app.use('/art_images', express.static(artImages))
+app.use('/api/art_images', express.static(artImages))
 
-app.post('/getArtworks', (req, res) => {
+app.post('/api/getArtworks', (req, res) => {
     const getArtworksSql = "SELECT * FROM Artworks WHERE exhibitionID = ?"
     exhibitionDB.all(getArtworksSql, [req.body.exhibitID], (err, rows) => {
         if (err) {
@@ -248,7 +248,7 @@ app.post('/getArtworks', (req, res) => {
     })
 })
 
-app.post('/editArtwork', (req, res) => {
+app.post('/api/editArtwork', (req, res) => {
     const { artworkID, title, description, artist, medium, year, imageUpdated, aspectRatio } = req.body
     var imageFileName
     if(imageUpdated === "true"){
@@ -277,7 +277,7 @@ app.post('/editArtwork', (req, res) => {
     })
 })
 
-app.post('/getAllExhibitions', (req, res) => {
+app.post('/api/getAllExhibitions', (req, res) => {
     const getExhibitionsSql = "SELECT * FROM Exhibitions"
     exhibitionDB.all(getExhibitionsSql, (err, rows) => {
         if (err) {
@@ -313,7 +313,7 @@ app.post('/getAllExhibitionsWithArtworks', (req, res) => {
     })
 })
 
-app.post('/uploadTicket', (req, res) => {
+app.post('/api/uploadTicket', (req, res) => {
     const insertSql = "INSERT INTO tickets (accountID, exhibitID) VALUES (?, ?)"
     accountDB.run(insertSql, [req.body.accountID, req.body.exhibitID], function(err) {
         if (err) {
@@ -326,7 +326,7 @@ app.post('/uploadTicket', (req, res) => {
     })
 })
 
-app.post("/searchExhibitions", (req, res) => {
+app.post("/api/searchExhibitions", (req, res) => {
     const searchTerm = req.body.searchTerm || ""
     const likeTerm = `%${searchTerm}%`;
 
@@ -342,7 +342,7 @@ app.post("/searchExhibitions", (req, res) => {
     })
 })
 
-app.post("/refundTicket", (req, res) => {
+app.post("/api/refundTicket", (req, res) => {
     const { accountID, exhibitID } = req.body
 
     const deleteSql = "DELETE FROM tickets WHERE accountID = ? AND exhibitID = ?"
@@ -361,7 +361,7 @@ app.post("/refundTicket", (req, res) => {
     })
 })
 
-app.post('/getCalendarExhibitions', (req, res) => {
+app.post('/api/getCalendarExhibitions', (req, res) => {
     const sql = `
       SELECT
         id,
@@ -384,7 +384,7 @@ app.post('/getCalendarExhibitions', (req, res) => {
     });
 });
 
-app.post('/checkTicket', (req, res) => {
+app.post('/api/checkTicket', (req, res) => {
     const sql = "SELECT * FROM tickets WHERE accountID = ? AND exhibitID = ?"
     accountDB.all(sql, [req.body.accountID, req.body.exhibitID], (err, rows) => {
         if (err) {
@@ -396,7 +396,7 @@ app.post('/checkTicket', (req, res) => {
 })
 
 
-app.post('/getExhibitionsWithTicket', (req, res) => {
+app.post('/api/getExhibitionsWithTicket', (req, res) => {
     const sql = "SELECT * FROM tickets WHERE accountID = ?"
     accountDB.all(sql, [req.body.accountID], (err, rows) => {
         if (err) {
