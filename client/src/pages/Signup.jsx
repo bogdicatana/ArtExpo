@@ -33,7 +33,7 @@ const Signup = () => {
         }
 
         // Send the POST request using fetch
-        fetch('/signup', {
+        fetch('/api/signup', {
             method: 'POST', // HTTP method
             headers: {
                 'Content-Type': 'application/json', // Content type header

@@ -12,7 +12,7 @@ const MyExhibitions = () => {
 
     function handleRemove(id) {
     
-        fetch('/deleteExhibition', {
+        fetch('/api/deleteExhibition', {
             method: 'POST',
             body: JSON.stringify({ exhibitionID: id }),
             headers: {
@@ -39,7 +39,7 @@ const MyExhibitions = () => {
     }
 
     React.useEffect(() => {
-        fetch('/getExhibitions', {
+        fetch('/api/getExhibitions', {
             method: 'POST',
             body: formData,
         })
